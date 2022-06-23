@@ -1,4 +1,6 @@
 const express = require('express');
+const loginRouter = require('./routes/login');
+// const errorMiddleware = require('./middleware/error');
 
 // ...
 
@@ -6,6 +8,9 @@ const app = express();
 
 app.use(express.json());
 
+app.use('/login', loginRouter);
+
+// app.use(errorMiddleware);
 // ...
 
 // É importante exportar a constante `app`,
