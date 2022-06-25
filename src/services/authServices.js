@@ -5,7 +5,7 @@ const authenticate = async ({ email }) => {
   const user = await User.findOne({
       where: { email },
   });     
-  console.log(user);
+
   if (!user) {
       // const error = { status: 400, message: 'Invalid fields' };
       // throw error;

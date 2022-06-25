@@ -1,3 +1,3 @@
-const validateFill = require('./validateFill');
+const { validateEmail, validatePassWord } = require('./validateFill');
 
-module.exports = { validateFill };
+module.exports = { validateEmail, validatePassWord };
