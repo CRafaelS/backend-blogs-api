@@ -13,9 +13,9 @@ if (user) {
   return token;
 };
 
-// const getAllUser = async () => {
-//   const allUser = await User.findAll();
-//   return allUser;
-// };
+const getAllUser = async () => {
+  const allUser = await User.findAll();
+  return allUser;
+};
 
-module.exports = { createUser }; 
+module.exports = { createUser, getAllUser }; 

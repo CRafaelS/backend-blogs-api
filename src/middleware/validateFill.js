@@ -2,13 +2,14 @@ const validateEmail = (req, res, next) => {
   const validEmail = /\S+@\S+\.\S+/;
   const { email } = req.body;
   
+  if (!email || email === '') {
+    return res.status(400).json({ message: 'Some required fields are missing' });
+  }
+  
   if (!validEmail.test(email)) { 
     return res.status(400).json({ message: '"email" must be a valid email' }); 
   }
 
-  if (!email || email === '') {
-    return res.status(400).json({ message: 'Some required fields are missing' });
-  }
   next();
 };
 
