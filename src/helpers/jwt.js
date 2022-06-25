@@ -11,4 +11,6 @@ const jwtConfig = {
 const generateToken = ({ email, displayName }) => 
     jwt.sign({ email, displayName }, JWTSECRET, jwtConfig);
 
-module.exports = { generateToken };
+const verifyToken = async (token) => jwt.verify(token, JWTSECRET);
+
+module.exports = { generateToken, verifyToken };
