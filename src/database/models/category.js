@@ -1,5 +1,5 @@
 'use strict';
-const CategorySchema = (sequelize, DataTypes) => {
+const Category = (sequelize, DataTypes) => {
   const CategoryTable = sequelize.define("Category", {
     id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
     name: DataTypes.STRING,
@@ -10,4 +10,4 @@ const CategorySchema = (sequelize, DataTypes) => {
   return CategoryTable;
 };
 
-module.exports = CategorySchema;
+module.exports = Category;
