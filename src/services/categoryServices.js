@@ -1,6 +1,6 @@
 const { Category } = require('../database/models');
 
-const createCategory = async ({ name }) => {
+const createCategory = async (name) => {
 if (!name) {
   return false;   
 }
@@ -8,4 +8,9 @@ if (!name) {
   return newCategoy;
 };
 
-module.exports = { createCategory };
+const getCaregories = async () => {
+  const allCaregories = await Category.findAll();
+  return allCaregories;
+};
+
+module.exports = { createCategory, getCaregories };
