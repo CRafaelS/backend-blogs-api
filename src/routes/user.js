@@ -11,5 +11,6 @@ userRouter.post('/',
   userController.postUser);
 
 userRouter.get('/', validateToken, userController.getAllUser);
+userRouter.get('/:id', validateToken, userController.getUserById);
 
 module.exports = userRouter;
