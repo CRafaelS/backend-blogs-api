@@ -14,12 +14,12 @@ if (user) {
 };
 
 const getAllUser = async () => {
-  const allUser = await User.findAll();
+  const allUser = await User.findAll({ attributes: { exclude: ['password'] } });
   return allUser;
 };
 
 const getUserById = async (id) => {
-  const user = await User.findByPk(id);
+  const user = await User.findByPk(id, { attributes: { exclude: ['password'] } });
   if (!user) {
     return false;
   }
@@ -27,3 +27,5 @@ const getUserById = async (id) => {
 };
 
 module.exports = { createUser, getAllUser, getUserById }; 
+
+// https://sequelize.org/docs/v6/core-concepts/model-querying-basics/ 
