@@ -1,4 +1,5 @@
 'use strict';
+
 const BlogPost = (sequelize, DataTypes) => {
   const BlogPostTable = sequelize.define("BlogPost", {
     id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
