@@ -17,10 +17,14 @@ const createBlogPost = async (title, content, categoryIds, token) => {
     updated: new Date(),
   }, { transaction: t });
 
-  await PostCategory.bulkCreate(categoryIds.map((catId) => ({
+  const getIdCategory = categoryIds.map((catId) => ({
     postId: createBlog.id,
     categoryId: catId,
-  })), { transaction: t });
+  }));
+
+  console.log('getIdCategory ===>', getIdCategory);
+
+  await PostCategory.bulkCreate(getIdCategory, { transaction: t });
 
   await t.commit();
     

@@ -1,5 +1,5 @@
 const { Op } = require('sequelize');
-const { Category } = require('../database/models');
+const { PostCategory } = require('../database/models');
 
 const validateTitleAndContent = (req, res, next) => {
   const { title, content } = req.body;
@@ -13,15 +13,19 @@ const validateTitleAndContent = (req, res, next) => {
 
 const validateCategoryId = async (req, res, next) => {
   const { categoryIds } = req.body;
-  const hascategory = await Category.findOne({
+  const hascategory = await PostCategory.findOne({
     where: {
-      id: {
-        [Op.or]: [categoryIds],
+      categoryId: {
+        [Op.and]: [categoryIds],
       },
     },
   });
 
-  console.log('hascategory ====> ', hascategory);
+  console.log('<<<<<<<hascategory>>>>>>>>>>>', hascategory);
+  if (hascategory === null) {
+    console.log('chegueiiiiiiiii <<<<<<<>>>>>>>>>>>>>>');
+    return res.status(400).json({ message: '"categoryIds" not found' });
+  }
   next();
 };
 
