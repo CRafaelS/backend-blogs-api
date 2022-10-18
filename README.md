@@ -1,19 +1,11 @@
-# Nome do projeto
+# Blogs API
 
-<img height="350" src="https://github.com/iuricode/readme-template/raw/main/README-repository/exemplo-image.png" alt="exemplo imagem" >
-
-## 💻 Projeto
-
-Linha adicional de texto informativo sobre o que o projeto faz.  Acesse o [PROJETO]() para mais detalhes.
+Esse projeto foi desenvolvido na <a href="https://www.betrybe.com/">Trybe</a>, seguindo os princípios do REST. Essa API tem um banco de dados MySQL com 4 tabelas, sendo uma de usuario, outra de blogPost com relacionamento de um usuario para muitos BlogPost, outra tabela denominada PostCategories para fazer o relacionamento de muitos para muitos da tabela BlogPost e Categories.
 
 ## 🚀 Tecnologias
 Esse projeto foi desenvolvido com as seguintes tecnologias:
 
-Front-end:
-> Desenvolvido usando: React, Redux, CSS3, HTML5, Redis, ES6
-
-Back-end:
-> Desenvolvido usando: NodeJS, ExpressJS, MongoDB, MYSQL, ES6
+> NodeJS, ExpressJS, MYSQL e sequelize 
 
 ## 📌 Habilidades
 
